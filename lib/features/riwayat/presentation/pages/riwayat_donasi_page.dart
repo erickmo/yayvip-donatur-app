@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/content/app_content.dart';
+import '../../../../core/widgets/vip_header.dart';
 
 /// Halaman riwayat donasi milik user.
 class RiwayatDonasiPage extends StatelessWidget {
@@ -11,11 +12,9 @@ class RiwayatDonasiPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppContent.riwayatDonasi,
-          style: const TextStyle(fontWeight: FontWeight.w700),
-        ),
+      appBar: VipHeader(
+        title: AppContent.riwayatDonasi,
+        showBackButton: true,
       ),
       body: ListView.builder(
         padding: const EdgeInsets.all(AppDimensions.spacingM),

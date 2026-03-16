@@ -110,6 +110,8 @@ class AppContent {
 
   // News
   static String get newsPageTitle => get('news.page_title');
+  static String get bagikan => get('news.bagikan');
+  static String get bacaSelengkapnya => get('news.baca_selengkapnya');
 
   // Profile
   static String get profilePageTitle => get('profile.page_title');
@@ -131,6 +133,33 @@ class AppContent {
   static String get loading => get('common.loading');
   static String get retry => get('common.retry');
   static String get cancel => get('common.cancel');
+
+  // Settings
+  static String get settingsPageTitle => get('settings.page_title');
+  static String get notifikasi => get('settings.notifikasi');
+  static String get notifikasiDesc => get('settings.notifikasi_desc');
+  static String get bahasa => get('settings.bahasa');
+  static String get bahasaValue => get('settings.bahasa_value');
+  static String get tema => get('settings.tema');
+  static String get temaValue => get('settings.tema_value');
+  static String get keamanan => get('settings.keamanan');
+  static String get ubahPassword => get('settings.ubah_password');
+  static String get biometrik => get('settings.biometrik');
+  static String get biometrikDesc => get('settings.biometrik_desc');
+  static String get hapusCache => get('settings.hapus_cache');
+  static String get hapusCacheDesc => get('settings.hapus_cache_desc');
+  static String get versiApp => get('settings.versi_app');
+
+  // About
+  static String get aboutPageTitle => get('about.page_title');
+  static String get visiTitle => get('about.visi_title');
+  static String get misiTitle => get('about.misi_title');
+  static String get kontakTitle => get('about.kontak_title');
+  static String get ikutiKami => get('about.ikuti_kami');
+  static String get strukturTitle => get('about.struktur_title');
+
+  // App info
+  static String get visi => get('app.visi');
 
   // Errors
   static String get errorGeneral => get('errors.general');

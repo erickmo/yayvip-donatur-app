@@ -6,6 +6,7 @@ import 'package:flutter/rendering.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/content/app_content.dart';
+import '../../../../core/widgets/vip_header.dart';
 
 /// Halaman donasi — pilih nominal, metode pembayaran, dan QR Code.
 class DonationPage extends StatefulWidget {
@@ -50,11 +51,9 @@ class _DonationPageState extends State<DonationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppContent.donationPageTitle,
-          style: const TextStyle(fontWeight: FontWeight.w700),
-        ),
+      appBar: VipHeader(
+        title: AppContent.donationPageTitle,
+        subtitle: AppContent.donationInfoTitle,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppDimensions.spacingM),

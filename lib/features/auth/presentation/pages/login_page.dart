@@ -28,8 +28,24 @@ class _LoginPageState extends State<LoginPage> {
 
   void _onLogin() {
     if (_formKey.currentState?.validate() ?? false) {
-      // TODO: Implement login logic with Cubit
-      context.go('/home');
+      final email = _emailController.text.trim();
+      final password = _passwordController.text;
+
+      // Demo account — ganti dengan API call nanti
+      if (email == 'admin@yayvip.com' && password == 'yayvip123') {
+        context.go('/home');
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: const Text('Email atau password salah'),
+            backgroundColor: AppColors.error,
+            behavior: SnackBarBehavior.floating,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(AppDimensions.radiusM),
+            ),
+          ),
+        );
+      }
     }
   }
 

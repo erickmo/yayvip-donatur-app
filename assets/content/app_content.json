@@ -10,7 +10,13 @@
     "email": "vernonindonesiapintar@gmail.com",
     "address": "Jalan Letjen Sutoyo 102",
     "instagram": "vernonindonesiapintar",
-    "tiktok": "yayvip"
+    "tiktok": "yayvip",
+    "visi": "Mewujudkan generasi muda unggul yang memiliki akses penuh terhadap pendidikan, pelatihan berkualitas, dan kesempatan kerja yang setara, demi masa depan Indonesia yang maju dan berdaya saing global.",
+    "misi_1": "Membangun ekosistem pendampingan, pembiayaan, dan pelatihan bagi anak-anak berprestasi dari berbagai latar belakang.",
+    "misi_2": "Memfasilitasi keterhubungan antara anak-anak berprestasi, mentor, lembaga pendidikan, dan dunia industri.",
+    "misi_3": "Menyediakan program beasiswa, pelatihan vokasi, dan pengembangan soft skill yang sesuai kebutuhan dunia kerja.",
+    "misi_4": "Mengawal perjalanan anak-anak penerima manfaat dari proses belajar hingga penempatan kerja.",
+    "misi_5": "Berkontribusi aktif dalam pemerataan akses pendidikan dan karier di seluruh wilayah Indonesia."
   },
   "auth": {
     "login_title": "Masuk",
@@ -64,7 +70,9 @@
     "screenshot_berhasil": "Screenshot QR berhasil disimpan"
   },
   "news": {
-    "page_title": "Update Terbaru"
+    "page_title": "Update Terbaru",
+    "bagikan": "Bagikan",
+    "baca_selengkapnya": "Baca Selengkapnya"
   },
   "profile": {
     "page_title": "Profil",
@@ -77,6 +85,35 @@
     "stat_total_donasi": "Total Donasi",
     "stat_frekuensi": "Frekuensi",
     "stat_sejak": "Sejak"
+  },
+  "settings": {
+    "page_title": "Pengaturan",
+    "notifikasi": "Notifikasi",
+    "notifikasi_desc": "Terima notifikasi update dan donasi",
+    "bahasa": "Bahasa",
+    "bahasa_value": "Bahasa Indonesia",
+    "tema": "Tema Tampilan",
+    "tema_value": "Terang",
+    "keamanan": "Keamanan",
+    "ubah_password": "Ubah Password",
+    "biometrik": "Login Biometrik",
+    "biometrik_desc": "Gunakan sidik jari atau Face ID",
+    "hapus_cache": "Hapus Cache",
+    "hapus_cache_desc": "Bersihkan data cache aplikasi",
+    "versi_app": "Versi Aplikasi"
+  },
+  "about": {
+    "page_title": "Tentang Kami",
+    "visi_title": "Visi",
+    "misi_title": "Misi",
+    "kontak_title": "Kontak",
+    "ikuti_kami": "Ikuti Kami",
+    "struktur_title": "Struktur Organisasi",
+    "pembina": "Pembina Yayasan",
+    "pengawas": "Pengawas Yayasan",
+    "ketua": "Ketua Yayasan",
+    "sekretaris": "Sekretaris Yayasan",
+    "bendahara": "Bendahara Yayasan"
   },
   "laporan": {
     "page_title": "Laporan Keuangan",

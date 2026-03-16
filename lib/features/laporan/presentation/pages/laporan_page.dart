@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/content/app_content.dart';
+import '../../../../core/widgets/vip_header.dart';
 
 /// Halaman laporan keuangan yayasan.
 /// Menampilkan ringkasan dana, grafik sederhana, dan detail alokasi.
@@ -12,11 +13,9 @@ class LaporanPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppContent.laporanPageTitle,
-          style: const TextStyle(fontWeight: FontWeight.w700),
-        ),
+      appBar: VipHeader(
+        title: AppContent.laporanPageTitle,
+        subtitle: AppContent.orgName,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppDimensions.spacingM),

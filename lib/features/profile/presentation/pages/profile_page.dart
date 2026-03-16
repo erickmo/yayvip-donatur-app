@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_dimensions.dart';
 import '../../../../core/content/app_content.dart';
+import '../../../../core/widgets/vip_header.dart';
 
 /// Halaman profil donatur.
 class ProfilePage extends StatelessWidget {
@@ -12,11 +13,21 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          AppContent.profilePageTitle,
-          style: const TextStyle(fontWeight: FontWeight.w700),
-        ),
+      appBar: VipHeader(
+        title: AppContent.profilePageTitle,
+        actions: [
+          Container(
+            decoration: BoxDecoration(
+              color: AppColors.background,
+              borderRadius: BorderRadius.circular(AppDimensions.radiusM),
+            ),
+            child: IconButton(
+              onPressed: () => context.push('/settings'),
+              icon: const Icon(Icons.settings_outlined),
+              color: AppColors.textSecondary,
+            ),
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppDimensions.spacingM),
@@ -54,14 +65,14 @@ class ProfilePage extends StatelessWidget {
             width: 80,
             height: 80,
             decoration: BoxDecoration(
-              color: AppColors.primary.withValues(alpha: 0.1),
-              shape: BoxShape.circle,
+              gradient: const LinearGradient(
+                colors: [AppColors.primary, AppColors.primaryLight],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(AppDimensions.radiusXL),
             ),
-            child: const Icon(
-              Icons.person,
-              color: AppColors.primary,
-              size: 40,
-            ),
+            child: const Icon(Icons.person, color: Colors.white, size: 40),
           ),
           const SizedBox(height: AppDimensions.spacingM),
           const Text(
@@ -75,10 +86,7 @@ class ProfilePage extends StatelessWidget {
           const SizedBox(height: AppDimensions.spacingXS),
           const Text(
             'donatur@email.com',
-            style: TextStyle(
-              fontSize: 14,
-              color: AppColors.textSecondary,
-            ),
+            style: TextStyle(fontSize: 14, color: AppColors.textSecondary),
           ),
           const SizedBox(height: AppDimensions.spacingM),
           OutlinedButton.icon(
@@ -115,19 +123,11 @@ class ProfilePage extends StatelessWidget {
           Expanded(
             child: _buildStatColumn(AppContent.statTotalDonasi, 'Rp 2.5 Jt'),
           ),
-          Container(
-            width: 1,
-            height: 40,
-            color: Colors.white30,
-          ),
+          Container(width: 1, height: 40, color: Colors.white30),
           Expanded(
             child: _buildStatColumn(AppContent.statFrekuensi, '12x'),
           ),
-          Container(
-            width: 1,
-            height: 40,
-            color: Colors.white30,
-          ),
+          Container(width: 1, height: 40, color: Colors.white30),
           Expanded(
             child: _buildStatColumn(AppContent.statSejak, 'Jan 2025'),
           ),
@@ -150,10 +150,7 @@ class ProfilePage extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           label,
-          style: const TextStyle(
-            fontSize: 11,
-            color: Colors.white70,
-          ),
+          style: const TextStyle(fontSize: 11, color: Colors.white70),
         ),
       ],
     );
@@ -189,13 +186,13 @@ class ProfilePage extends StatelessWidget {
           _buildMenuItem(
             icon: Icons.settings_outlined,
             title: AppContent.pengaturan,
-            onTap: () {},
+            onTap: () => context.push('/settings'),
           ),
           _buildDivider(),
           _buildMenuItem(
             icon: Icons.info_outline,
             title: AppContent.tentangKami,
-            onTap: () {},
+            onTap: () => context.push('/about'),
           ),
           _buildDivider(),
           _buildMenuItem(
@@ -203,9 +200,7 @@ class ProfilePage extends StatelessWidget {
             title: AppContent.keluar,
             iconColor: AppColors.error,
             titleColor: AppColors.error,
-            onTap: () {
-              // TODO: Implement logout
-            },
+            onTap: () => context.go('/login'),
           ),
         ],
       ),
@@ -220,7 +215,14 @@ class ProfilePage extends StatelessWidget {
     required VoidCallback onTap,
   }) {
     return ListTile(
-      leading: Icon(icon, color: iconColor ?? AppColors.textSecondary),
+      leading: Container(
+        padding: const EdgeInsets.all(AppDimensions.spacingS),
+        decoration: BoxDecoration(
+          color: (iconColor ?? AppColors.primary).withValues(alpha: 0.08),
+          borderRadius: BorderRadius.circular(AppDimensions.radiusM),
+        ),
+        child: Icon(icon, color: iconColor ?? AppColors.primary, size: 20),
+      ),
       title: Text(
         title,
         style: TextStyle(
@@ -238,6 +240,6 @@ class ProfilePage extends StatelessWidget {
   }
 
   Widget _buildDivider() {
-    return const Divider(height: 1, indent: 56);
+    return const Divider(height: 1, indent: 72);
   }
 }
