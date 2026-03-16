@@ -43,18 +43,22 @@ Yayasan Vernon Indonesia Pintar (YayVIP) membutuhkan aplikasi khusus untuk para 
 
 | Fitur | Prioritas | Status |
 |---|---|---|
-| Splash Screen | High | Done |
+| Splash Screen (animasi logo VIP) | High | Done |
 | Login / Register | High | Done (UI) |
-| Dashboard / Home | High | Done (UI) |
+| Dashboard / Home (modern header) | High | Done (UI) |
 | Donasi via QR Code + Screenshot | High | Done (UI) |
-| Update Terbaru (Blog) | High | Done (UI) |
-| Laporan Keuangan | High | Done (UI) |
+| Update Terbaru (Blog feed) | High | Done (UI) |
+| Detail Berita (collapsing header) | High | Done (UI) |
+| Laporan Keuangan (alokasi + transaksi) | High | Done (UI) |
 | Riwayat Donasi | Medium | Done (UI) |
 | Profil Donatur | Medium | Done (UI) |
-| Bottom Nav (FAB Donasi) | High | Done |
+| Pengaturan (notif, bahasa, keamanan) | Medium | Done (UI) |
+| Tentang Kami (visi, misi, struktur) | Medium | Done (UI) |
+| Bottom Nav (FAB Donasi merah) | High | Done |
+| Modern VipHeader (reusable) | Medium | Done |
 | Konten Dinamis (JSON) | High | Done |
 | PWA Branding | Medium | Done |
-| Notifikasi | Low | Belum mulai |
+| Notifikasi Push | Low | Belum mulai |
 | Backend API Integration | High | Menunggu API |
 
 ---
@@ -86,10 +90,17 @@ Yayasan Vernon Indonesia Pintar (YayVIP) membutuhkan aplikasi khusus untuk para 
 2. User melihat list semua donasi yang pernah dilakukan
 3. Setiap item menampilkan: nominal, tanggal, metode, dan status (Berhasil/Pending/Gagal)
 
-### Journey 5: Membaca Update Yayasan
+### Journey 5: Membaca Update & Detail Berita
 1. User tap tab "Update" di bottom nav
 2. User melihat feed berita dengan gambar, kategori chip, dan tanggal
-3. User tap artikel untuk detail
+3. User tap artikel → buka halaman detail dengan collapsing image header
+4. User baca artikel lengkap, bisa tap "Bagikan"
+
+### Journey 6: Pengaturan & Tentang
+1. User buka Profil → tap "Pengaturan"
+2. User toggle notifikasi, atur bahasa, tema, keamanan (biometrik, ubah password)
+3. User buka Profil → tap "Tentang Kami"
+4. User melihat visi, misi, struktur organisasi, kontak, dan sosial media yayasan
 
 ---
 
@@ -102,10 +113,13 @@ Yayasan Vernon Indonesia Pintar (YayVIP) membutuhkan aplikasi khusus untuk para 
 | MainShell | /home | Shell dengan bottom nav bar | Yes | Done |
 | HomePage | tab 0 | Dashboard, stats, berita | Yes | Done |
 | NewsPage | tab 1 | Feed update/blog terbaru | Yes | Done |
+| NewsDetailPage | /news-detail | Detail artikel (collapsing header) | Yes | Done |
 | DonationPage | tab 2 | Pilih nominal, QR, screenshot | Yes | Done |
 | LaporanPage | tab 3 | Saldo, alokasi, transaksi | Yes | Done |
 | ProfilePage | tab 4 | Profil, menu settings | Yes | Done |
 | RiwayatDonasiPage | /riwayat-donasi | List riwayat donasi user | Yes | Done |
+| SettingsPage | /settings | Notifikasi, bahasa, tema, keamanan | Yes | Done |
+| AboutPage | /about | Visi, misi, struktur, kontak | Yes | Done |
 
 ### Bottom Navigation Bar
 ```
@@ -118,16 +132,36 @@ Yayasan Vernon Indonesia Pintar (YayVIP) membutuhkan aplikasi khusus untuk para 
 ### Flow Navigasi
 ```
 Splash (/) → Login (/login) → MainShell (/home)
-                                ├── tab 0: HomePage
-                                ├── tab 1: NewsPage
+                                ├── tab 0: HomePage → /news-detail
+                                ├── tab 1: NewsPage → /news-detail
                                 ├── tab 2: DonationPage → QR Bottom Sheet
                                 ├── tab 3: LaporanPage
-                                └── tab 4: ProfilePage → /riwayat-donasi
+                                └── tab 4: ProfilePage
+                                            ├── /riwayat-donasi
+                                            ├── /settings
+                                            ├── /about
+                                            └── Keluar → /login
 ```
 
 ---
 
-## 5. Sistem Konten Dinamis
+## 5. Komponen UI
+
+### VipHeader (Reusable)
+Widget header modern yang digunakan di seluruh screen:
+- **Clean mode** — background transparan, title hitam, subtitle abu
+- **Gradient mode** — background gradient merah, teks putih
+- Back button dengan rounded container
+- Support actions (icon buttons)
+
+### Demo Account (Testing)
+- **Email:** `admin@yayvip.com`
+- **Password:** `yayvip123`
+- Form login sudah pre-filled untuk kemudahan testing
+
+---
+
+## 6. Sistem Konten Dinamis
 
 Semua teks/caption di aplikasi dimuat dari file JSON (`assets/content/app_content.json`), bukan hardcode di source code.
 
@@ -136,13 +170,15 @@ Semua teks/caption di aplikasi dimuat dari file JSON (`assets/content/app_conten
 **Service:** `lib/core/content/app_content.dart` — dot notation accessor (`AppContent.homeGreeting`)
 
 **Struktur JSON:**
-- `app` — nama, tagline, deskripsi, info organisasi, kontak
+- `app` — nama, tagline, deskripsi, info organisasi, kontak, visi, misi (5 poin)
 - `auth` — label login, register, validasi form
 - `navigation` — label bottom nav (5 tab)
 - `home` — greeting, statistik cards, berita section
 - `donation` — nominal, QR, metode pembayaran, screenshot
-- `news` — judul halaman
+- `news` — judul halaman, bagikan, baca selengkapnya
 - `profile` — menu items (riwayat, laporan, pengaturan, tentang, keluar)
+- `settings` — notifikasi, bahasa, tema, keamanan, biometrik, cache, versi
+- `about` — visi, misi, kontak, ikuti kami, struktur organisasi
 - `laporan` — judul, placeholder
 - `common` — tombol umum (loading, retry, cancel, save, dll)
 - `errors` — pesan error (network, server, unauthorized, timeout)
@@ -150,7 +186,7 @@ Semua teks/caption di aplikasi dimuat dari file JSON (`assets/content/app_conten
 
 ---
 
-## 6. Non-Functional Requirements
+## 7. Non-Functional Requirements
 
 | Kategori | Target |
 |---|---|
@@ -164,7 +200,7 @@ Semua teks/caption di aplikasi dimuat dari file JSON (`assets/content/app_conten
 
 ---
 
-## 7. Branding & Tema
+## 8. Branding & Tema
 
 Mengikuti proposal Vernon Indonesia Pintar:
 - **Primary Color:** #E53935 (Merah)
@@ -178,7 +214,7 @@ Mengikuti proposal Vernon Indonesia Pintar:
 
 ---
 
-## 8. Tech Stack & Architecture
+## 9. Tech Stack & Architecture
 
 | Layer | Tech |
 |---|---|
@@ -202,7 +238,7 @@ lib/features/[feature]/
 
 ---
 
-## 9. Out of Scope (v1.0)
+## 10. Out of Scope (v1.0)
 - Payment gateway integration (fase berikutnya)
 - Multi-bahasa (hanya Bahasa Indonesia di v1)
 - Admin panel (terpisah)
@@ -210,7 +246,7 @@ lib/features/[feature]/
 
 ---
 
-## 10. Open Questions
+## 11. Open Questions
 - [ ] Backend API stack dan endpoint structure?
 - [ ] Payment gateway yang akan digunakan?
 - [ ] Apakah QR Code di-generate dari app atau dari backend?
