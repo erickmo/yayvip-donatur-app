@@ -1,0 +1,108 @@
+{
+  "app": {
+    "name": "YayVIP Donatur",
+    "tagline": "Empower Tomorrow's Leaders",
+    "description": "Your Support Unlocks Equal Futures for Indonesia's Youth",
+    "version": "1.0.0",
+    "org_name": "Yayasan Vernon Indonesia Pintar",
+    "org_short": "VIP",
+    "website": "yayasan.vip",
+    "email": "vernonindonesiapintar@gmail.com",
+    "address": "Jalan Letjen Sutoyo 102",
+    "instagram": "vernonindonesiapintar",
+    "tiktok": "yayvip"
+  },
+  "auth": {
+    "login_title": "Masuk",
+    "login_subtitle": "Masuk untuk mulai berdonasi",
+    "register_title": "Daftar",
+    "email_label": "Email",
+    "password_label": "Password",
+    "forgot_password": "Lupa Password?",
+    "dont_have_account": "Belum punya akun?",
+    "already_have_account": "Sudah punya akun?",
+    "email_required": "Email wajib diisi",
+    "email_invalid": "Format email tidak valid",
+    "password_required": "Password wajib diisi",
+    "password_min_length": "Password minimal 6 karakter"
+  },
+  "navigation": {
+    "home": "Beranda",
+    "update": "Update",
+    "donasi": "Donasi",
+    "laporan": "Laporan",
+    "profile": "Profil"
+  },
+  "home": {
+    "greeting": "Halo",
+    "greeting_suffix": "Donatur!",
+    "total_donasi_label": "Total Donasi Anda",
+    "donasi_sekarang": "Donasi Sekarang",
+    "dampak_donasi_title": "Dampak Donasi",
+    "stat_dana_terkumpul": "Total Dana Terkumpul",
+    "stat_anak_dibantu": "Anak Dibantu",
+    "stat_anak_bekerja": "Anak Bekerja",
+    "stat_donatur_aktif": "Donatur Aktif",
+    "berita_terbaru": "Berita Terbaru",
+    "lihat_semua": "Lihat Semua"
+  },
+  "donation": {
+    "page_title": "Donasi",
+    "info_title": "Mudah & Fleksibel",
+    "info_description": "Bisa mulai dari berapapun, tanpa komitmen, tanpa ikatan bulanan.",
+    "pilih_nominal": "Pilih Nominal",
+    "nominal_lain": "Nominal Lain",
+    "masukkan_nominal": "Masukkan nominal donasi",
+    "metode_pembayaran": "Metode Pembayaran",
+    "scan_qr": "Scan QR Code",
+    "scan_qr_subtitle": "Scan QR Code untuk transfer langsung",
+    "transfer_bank": "Transfer Bank",
+    "transfer_bank_subtitle": "Transfer manual ke rekening yayasan",
+    "konfirmasi_donasi": "Konfirmasi Donasi",
+    "qr_title": "Scan QR Code untuk Donasi",
+    "simpan_screenshot": "Simpan Screenshot",
+    "screenshot_berhasil": "Screenshot QR berhasil disimpan"
+  },
+  "news": {
+    "page_title": "Update Terbaru"
+  },
+  "profile": {
+    "page_title": "Profil",
+    "edit_profile": "Edit Profil",
+    "riwayat_donasi": "Riwayat Donasi",
+    "laporan_keuangan": "Laporan Keuangan",
+    "pengaturan": "Pengaturan",
+    "tentang_kami": "Tentang Kami",
+    "keluar": "Keluar",
+    "stat_total_donasi": "Total Donasi",
+    "stat_frekuensi": "Frekuensi",
+    "stat_sejak": "Sejak"
+  },
+  "laporan": {
+    "page_title": "Laporan Keuangan",
+    "segera_hadir": "Segera hadir"
+  },
+  "common": {
+    "loading": "Memuat...",
+    "retry": "Coba Lagi",
+    "cancel": "Batal",
+    "save": "Simpan",
+    "delete": "Hapus",
+    "confirm": "Konfirmasi",
+    "back": "Kembali",
+    "next": "Lanjut",
+    "submit": "Kirim"
+  },
+  "errors": {
+    "general": "Terjadi kesalahan. Silakan coba lagi.",
+    "network": "Tidak ada koneksi internet.",
+    "server": "Server sedang bermasalah. Coba lagi nanti.",
+    "unauthorized": "Sesi Anda telah berakhir. Silakan login kembali.",
+    "not_found": "Data tidak ditemukan.",
+    "timeout": "Koneksi timeout. Coba lagi."
+  },
+  "empty_states": {
+    "data": "Belum ada data.",
+    "search": "Hasil pencarian tidak ditemukan."
+  }
+}

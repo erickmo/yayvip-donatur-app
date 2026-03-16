@@ -1,0 +1,57 @@
+# Flutter/Dart
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Generated files
+*.g.dart
+*.freezed.dart
+*.config.dart
+injection.config.dart
+
+# Coverage
+coverage/
+
+# Environment
+.env
+*.env.local
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+*.class
+*.log
+*.pyc
+*.swp
+
+# Android
+**/android/local.properties
+**/android/.gradle
+**/android/key.properties
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# iOS
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/.last_build_id
+
+# Symbolication & Obfuscation
+app.*.symbols
+app.*.map.json
+
+# Docs
+**/doc/api/
+*.pdf
