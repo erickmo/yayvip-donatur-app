@@ -5,6 +5,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../network/api_client.dart';
 import '../network/network_info.dart';
+import '../../features/donatur/data/datasources/donatur_remote_datasource.dart';
+import '../../features/donatur/data/repositories/donatur_repository_impl.dart';
+import '../../features/donatur/domain/repositories/donatur_repository.dart';
 
 final getIt = GetIt.instance;
 
@@ -26,5 +29,13 @@ Future<void> configureDependencies() async {
   );
   getIt.registerSingleton<ApiClient>(
     ApiClient(getIt<FlutterSecureStorage>()),
+  );
+
+  // Donatur
+  getIt.registerLazySingleton<DonaturRemoteDatasource>(
+    () => DonaturRemoteDatasourceImpl(getIt<ApiClient>()),
+  );
+  getIt.registerLazySingleton<DonaturRepository>(
+    () => DonaturRepositoryImpl(getIt<DonaturRemoteDatasource>()),
   );
 }

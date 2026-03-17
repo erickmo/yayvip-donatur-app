@@ -232,9 +232,7 @@ class _LoginPageState extends State<LoginPage> {
           style: const TextStyle(color: AppColors.textSecondary),
         ),
         TextButton(
-          onPressed: () {
-            // TODO: Navigate to register
-          },
+          onPressed: () => context.push('/register-donatur'),
           child: Text(
             AppContent.registerTitle,
             style: const TextStyle(

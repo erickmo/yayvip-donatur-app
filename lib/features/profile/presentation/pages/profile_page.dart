@@ -33,7 +33,7 @@ class ProfilePage extends StatelessWidget {
         padding: const EdgeInsets.all(AppDimensions.spacingM),
         child: Column(
           children: [
-            _buildProfileHeader(),
+            _buildProfileHeader(context),
             const SizedBox(height: AppDimensions.spacingL),
             _buildDonationStats(),
             const SizedBox(height: AppDimensions.spacingL),
@@ -44,7 +44,7 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildProfileHeader() {
+  Widget _buildProfileHeader(BuildContext context) {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(AppDimensions.spacingL),
@@ -90,7 +90,10 @@ class ProfilePage extends StatelessWidget {
           ),
           const SizedBox(height: AppDimensions.spacingM),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: () => context.push(
+              '/edit-profile',
+              extra: const {'donatur_id': '', 'user_id': ''},
+            ),
             icon: const Icon(Icons.edit_outlined, size: 18),
             label: Text(AppContent.editProfile),
             style: OutlinedButton.styleFrom(

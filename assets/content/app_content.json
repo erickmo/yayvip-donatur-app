@@ -141,5 +141,22 @@
   "empty_states": {
     "data": "Belum ada data.",
     "search": "Hasil pencarian tidak ditemukan."
+  },
+  "donatur": {
+    "register_title": "Daftar Donatur",
+    "register_subtitle": "Lengkapi data di bawah untuk mendaftar sebagai donatur VIP",
+    "edit_profile_title": "Edit Profil",
+    "save_changes": "Simpan Perubahan",
+    "register_success": "Pendaftaran berhasil! Selamat datang di keluarga VIP.",
+    "update_success": "Profil berhasil diperbarui.",
+    "nama_label": "Nama Lengkap",
+    "phone_label": "Nomor Telepon",
+    "address_label": "Alamat",
+    "city_label": "Kota",
+    "province_label": "Provinsi",
+    "postal_code_label": "Kode Pos",
+    "id_type_label": "Jenis Identitas",
+    "id_number_label": "Nomor Identitas",
+    "daftar_sekarang": "Daftar Sekarang"
   }
 }

@@ -3,6 +3,8 @@ import 'package:go_router/go_router.dart';
 
 import '../../features/about/presentation/pages/about_page.dart';
 import '../../features/auth/presentation/pages/login_page.dart';
+import '../../features/donatur/presentation/pages/edit_profile_page.dart';
+import '../../features/donatur/presentation/pages/register_donatur_page.dart';
 import '../../features/news/presentation/pages/news_detail_page.dart';
 import '../../features/riwayat/presentation/pages/riwayat_donasi_page.dart';
 import '../../features/settings/presentation/pages/settings_page.dart';
@@ -54,6 +56,20 @@ class AppRouter {
       GoRoute(
         path: '/about',
         builder: (context, state) => const AboutPage(),
+      ),
+      GoRoute(
+        path: '/register-donatur',
+        builder: (context, state) => const RegisterDonaturPage(),
+      ),
+      GoRoute(
+        path: '/edit-profile',
+        builder: (context, state) {
+          final data = state.extra as Map<String, dynamic>? ?? {};
+          return EditProfilePage(
+            donaturId: data['donatur_id'] as String? ?? '',
+            userId: data['user_id'] as String? ?? '',
+          );
+        },
       ),
     ],
     errorBuilder: (context, state) => Scaffold(
